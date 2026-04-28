@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Cadastro de Cliente</h1>
-    <form action="/cadastrar" id="cadastro">
+    <form action="/cadastrar" methods="POST" id="cadastro">
         <label for="c_cpf">CPF</label>
         <input type="text" name="cpf" id="c_cpf" required>
 
@@ -19,10 +19,11 @@
         <input type="text" name="sobrenome" id="c_sobrenome" required>
 
         <label for="c_idade">Idade</label>
-        <input type="number" name="c_idade" id="c_idade" required>
+        <input type="number" name="idade" id="c_idade" required>
 
         <button type="submit">Cadastrar</button>
 
     </form>
+
 </body>
 </html>
