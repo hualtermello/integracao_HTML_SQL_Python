@@ -16,8 +16,21 @@ bd_config = {
 }
 #Criando a rota para acessar o arquivo html
 @app.route('/')
-def buscar_index(): 
-  return render_template('index.html')
+def buscar_index():
+  try:
+    #Cria conexão
+    conectar = mysql.connector.connect(**bd_config)
+    cursor = conectar.cursor(dictionary=True)
+
+    #Selecao da tabela
+    cursor.execute("select cpf, primeiro_nome, sobrenome, idade from cliente")
+    lista_clientes = cursor.fetchall()
+
+    return render_template('index.html', clientes = lista_clientes)
+  
+  except mysql.connector.Error as erro:
+    return f"Erro ao carregar a tabela: {erro}"
+
 
 @app.route('/cadastrar', methods=['POST'])
 def cadastrar():
@@ -41,5 +54,7 @@ def cadastrar():
     
   except mysql.connector.Error as erro:
     return f"Erro ao gravar no banco: {erro}"
-  
+
+if __name__ == '__main__':
+  app.run(debug=True)
 
