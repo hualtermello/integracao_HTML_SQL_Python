@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Cadastro de Cliente</h1>
-    <form action="/cadastrar" methods="POST" id="cadastro">
+    <form action="/cadastrar" method="POST" id="cadastro">
         <label for="c_cpf">CPF</label>
         <input type="text" name="cpf" id="c_cpf" required>
 
@@ -24,6 +24,26 @@
         <button type="submit">Cadastrar</button>
 
     </form>
+    <h2>Lista de Clientes</h2>
+
+    <table>
+        <thead>
+            <th>CPF</th>
+            <th>Primeiro_Nome</th>
+            <th>Sobrenome</th>
+            <th>Idade</th>
+        </thead>
+        <tbody>
+            {%for cliente in clientes%}
+                <tr>
+                    <td>{{cliente.CPF}}</td>
+                    <td>{{cliente.Primeiro_Nome}}</td>
+                    <td>{{cliente.Sobrenome}}</td>
+                    <td>{{cliente.Idade}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
 
 </body>
 </html>
