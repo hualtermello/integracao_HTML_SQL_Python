@@ -36,11 +36,16 @@
         <tbody>
             {%for cliente in clientes%}
                 <tr>
-                    <td>{{cliente.CPF}}</td>
-                    <td>{{cliente.Primeiro_Nome}}</td>
-                    <td>{{cliente.Sobrenome}}</td>
-                    <td>{{cliente.Idade}}</td>
+                    <td>{{cliente.cpf}}</td>
+                    <td>{{cliente.primeiro_nome}}</td>
+                    <td>{{cliente.sobrenome}}</td>
+                    <td>{{cliente.idade}}</td>
                 </tr>
+                    <td>
+                        <a href="{{url_for('excluir', cpf=cliente.cpf)}}"
+                        onclick="return confirm('Deseja remover este cliente?')">
+                        Excluir</a>
+                    </td>
             {%endfor%}
         </tbody>
     </table>
