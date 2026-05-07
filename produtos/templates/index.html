@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Prt Produtos</title>
+</head>
+<body>
+    <h1>Cadastro de Produtos</h1>
+    <form action="/cadastrar" method="post">
+        <label for="c_nome_produto">Produto</label>
+        <input type="text" name="nome_produto" id="c_nome_produto" required>
+
+        <label for="c_descricao">Descrição</label>
+        <input type="text" name="descricao" id="c_descricao" required>
+
+        <label for="c_preco">Preço</label>
+        <input type="number" name="preco" id="c_preco" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <h2>Lista de Produtos</h2>
+    <table>
+
+    </table>
+</body>
+</html>
