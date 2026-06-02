@@ -53,7 +53,7 @@ def cadastrar():
     cursor.close()
     conectar.close()
     
-    return f"<h3>Cliente {primeiro_nome} salvo com sucesso!</h3> <a href='/'> Voltar </a>"
+    return redirect(url_for('buscar_index'))
     
   except mysql.connector.Error as erro:
     return f"Erro ao gravar no banco: {erro}"
